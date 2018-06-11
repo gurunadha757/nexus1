@@ -26,16 +26,16 @@
       </plugins>
     </pluginManagement>
   </build>
-  <distributionManagement>
+    <distributionManagement>
     <repository>
-        <id>test</id>
-        
-        <url>http://18.237.76.59:8888/nexus-latest/content/repositories/releases/</url>
+        <id>central</id>
+        <name>ip-172-31-46-205.us-west-2.compute.internal-releases</name>
+        <url>http://35.162.208.86:8081/artifactory/guru123</url>
     </repository>
-     <snapshotRepository>
-        <id>test</id>
-        
-        <url>http://18.237.76.59:8888/nexus-latest/content/repositories/snapshots/</url>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-46-205.us-west-2.compute.internal-snapshots</name>
+        <url>http://35.162.208.86:8081/artifactory/guru123</url>
     </snapshotRepository>
-     </distributionManagement>  
+</distributionManagement>
 </project>
