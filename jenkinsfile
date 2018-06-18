@@ -9,7 +9,7 @@ pipeline {
                 }
             }
         }
-        stage(Upload artifacts) {
+        stage('Upload artifacts') {
            steps {
               script {
               def server = Artifactory.newServer url: 'http://34.221.50.217:8081/artifactory', username: 'admin', password: 'password'
