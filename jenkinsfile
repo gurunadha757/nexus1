@@ -9,26 +9,21 @@ pipeline {
                 }
             }
         }
-      
-		stage('Upload artifacts') {
-            
-            steps {
-            script {
-                def server = Artifactory.server ('test')
-                               def uploadSpec  =  """{
-                    "files": [
+      stage('Upload artifacts') {
+           steps {
+              script {
+            def server = Artifactory.newServer url: 'http://34.221.50.217:8081/artifactory', username: 'admin', password: 'password'
+            def uploadSpec = """{
+            "files": [
                 {
-                                  "pattern": "/var/lib/jenkins/workspace/pipelinejob1/target/CounterWebApp.war",
-",
-                  "target": "${repositoryName}" 
-                }
-                            ]
-                      }"""
-
-                        def buildInfo1 = server.upload(uploadSpec)
-                        server.publishBuildInfo(buildInfo1)
-	    }
-	    }
-	}    
+              "pattern": "/var/lib/jenkins/workspace/pipelinejob1/target/CounterWebApp.war",
+                 "target": "${repositoryName}"
+                  }
+               ]
+           }""" 
+server.upload(uploadSpec)
+          } 
+       }
+    }    
  }
 }
