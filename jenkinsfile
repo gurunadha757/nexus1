@@ -29,6 +29,6 @@ pipeline {
                         server.publishBuildInfo(buildInfo1)
 	    }
 	    }
-	    
+	}    
  }
 }
